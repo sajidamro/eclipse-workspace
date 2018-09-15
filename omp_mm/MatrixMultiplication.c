@@ -5,15 +5,13 @@
  *      Author: Sajid
  */
 
-//double difftime(time_t time1, time_t time2);
-
 #include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define NRA 1000               /* number of rows in matrix A */
-#define NCA 1500              /* number of columns in matrix A */
+#define NRA 100               /* number of rows in matrix A */
+#define NCA 150              /* number of columns in matrix A */
 #define NCB 700                   /* number of columns in matrix B */
 
 #define SIZE 256
@@ -29,30 +27,19 @@ time_t currentTime(void);
 int main (int argc, char *argv[])
 {
 
-double timeTaken;
+double timeTaken=0;
 time_t endTime,startTime;
 int	tid, nthreads, i, j, k, chunk;
-
-//nthreads = numberThreads; /* define number of threads */
 
 double	a[NRA][NCA],           /* matrix A to be multiplied */
 		b[NCA][NCB],           /* matrix B to be multiplied */
 		c[NRA][NCB];           /* result matrix C */
 
-chunk = 10;                    /* set loop iteration chunk size */
+chunk = 1000;                    /* set loop iteration chunk size */
 
 FILE *log_file;
 /*** Start Logging into file***/
 log_file = fopen ("Matrix_Multi.log","a+");
-
-
-/*
-time_t startTime = time(0);
-multiplyMatrix();
-time_t endTime = time(0);
-double timeTaken = difftime(endTime, startTime)*1000;
-cout << "\n\tThe Multiplication took TIME in milliseconds: " << timeTaken;
-*/
 
 startTime = time(0);
 
@@ -69,9 +56,6 @@ omp_set_num_threads(numberThreads); // Setting number of Threads
 	printf("Number of Threads used already %d\n\r",tid);
 	fprintf(log_file,"Number of Threads used already %d\n\r",tid);
 
-	if (tid == 0)
-  //if (tid == numberThreads)
-		{
 		nthreads = omp_get_num_threads();
 
 		printf("Starting matrix multiple example with %d threads\n",nthreads);
@@ -79,7 +63,6 @@ omp_set_num_threads(numberThreads); // Setting number of Threads
 
 		fprintf(log_file,"Starting matrix multiple example with %d threads\n",nthreads);
 		fprintf(log_file, "Initializing matrices...\n");
-		}
 
   /*** Initialize matrices ***/
   #pragma omp for schedule (static, chunk)

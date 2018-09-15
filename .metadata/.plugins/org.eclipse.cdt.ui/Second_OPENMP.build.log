@@ -1,14 +1,11 @@
-17:36:08 **** Incremental Build of configuration Debug for project Second_OPENMP ****
+13:14:31 **** Incremental Build of configuration Debug for project Second_OPENMP ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o main.o "..\\main.c" 
 ..\main.c: In function 'main':
-..\main.c:30:15: warning: variable 'b' set but not used [-Wunused-but-set-variable]
+..\main.c:34:15: warning: variable 'b' set but not used [-Wunused-but-set-variable]
    float a[N], b[N];
                ^
-..\main.c:29:16: warning: unused variable 'tid' [-Wunused-variable]
-   int i, chunk,tid;
-                ^~~
 gcc -o Second_OPENMP.exe main.o -lgomp -lpthread 
 
-17:36:10 Build Finished. 0 errors, 2 warnings. (took 1s.160ms)
+13:14:33 Build Finished. 0 errors, 1 warnings. (took 1s.298ms)
 
