@@ -1,0 +1,205 @@
+/*
+ * MatrixMultiplication.c
+ *
+ *  Created on: Sep 11, 2018
+ *      Author: Sajid
+ */
+
+//double difftime(time_t time1, time_t time2);
+
+#include <omp.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define NRA 10               /* number of rows in matrix A */
+#define NCA 15              /* number of columns in matrix A */
+#define NCB 7                   /* number of columns in matrix B */
+#define SIZE 256
+#define numberThreads 3
+
+typedef int bool;
+#define TRUE  1
+#define FALSE 0
+
+int writingTime (FILE *fileName);
+time_t currentTime(void);
+
+int main (int argc, char *argv[])
+{
+
+int	tid, nthreads, i, j, k, chunk;
+
+//nthreads = numberThreads; /* define number of threads */
+
+double	a[NRA][NCA],           /* matrix A to be multiplied */
+		b[NCA][NCB],           /* matrix B to be multiplied */
+		c[NRA][NCB];           /* result matrix C */
+
+chunk = 10;                    /* set loop iteration chunk size */
+
+FILE *log_file;
+/*** Start Logging into file***/
+log_file = fopen ("Matrix_Multi.log","a+");
+
+fprintf(log_file,"\n\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+writingTime(log_file);// Write the starting time to the file
+fprintf(log_file,"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+
+/*** Spawn a parallel region explicitly scoping all variables ***/
+#pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+  {
+	tid = omp_get_thread_num();
+	printf("Number of Threads used already %d\n\r",tid);
+	fprintf(log_file,"Number of Threads used already %d\n\r",tid);
+
+	omp_set_num_threads(numberThreads); // Setting number of Threads
+
+	if (tid == 0)
+  //if (tid == numberThreads)
+		{
+		nthreads = omp_get_num_threads();
+
+		printf("Starting matrix multiple example with %d threads\n",nthreads);
+		printf("Initializing matrices...\n");
+
+		fprintf(log_file,"Starting matrix multiple example with %d threads\n",nthreads);
+		fprintf(log_file, "Initializing matrices...\n");
+		}
+
+  /*** Initialize matrices ***/
+  #pragma omp for schedule (static, chunk)
+
+  for (i=0; i<NRA; i++)
+    for (j=0; j<NCA; j++)
+      a[i][j]= i+j;
+
+  #pragma omp for schedule (static, chunk)
+
+  for (i=0; i<NCA; i++)
+    for (j=0; j<NCB; j++)
+      b[i][j]= i*j;
+
+  #pragma omp for schedule (static, chunk)
+
+  for (i=0; i<NRA; i++)
+    for (j=0; j<NCB; j++)
+      c[i][j]= 0;
+
+  /*** Do matrix multiply sharing iterations on outer loop ***/
+  /*** Display who does which iterations for demonstration purposes ***/
+  printf("Thread %d starting matrix multiply...\n",tid);
+
+  fprintf(log_file,"Thread %d starting matrix multiply...\n",tid);
+
+  #pragma omp for schedule (static, chunk)
+
+  for (i=0; i<NRA; i++)
+    {
+    printf("Thread=%d did row=%d\n",tid,i);
+
+    for(j=0; j<NCB; j++)
+      for (k=0; k<NCA; k++)
+        c[i][j] += a[i][k] * b[k][j];
+    }
+  }
+
+  /*** End of parallel region ***/
+
+  /*** Print results to console***/
+	printf("******************************************************\n");
+	printf("Result Matrix:\n");
+
+	for (i=0; i<NRA; i++)
+		  {
+		  	  for (j=0; j<NCB; j++)		printf("%6.2f   ", c[i][j]);
+
+		  	  printf("\n");
+		  }
+
+	printf("******************************************************\n");
+	printf ("Done.\n");
+
+  	/*** Print results to file***/
+	fprintf(log_file, "******************************************************\n");
+	fprintf(log_file, "Result Matrix:\n");
+
+	for (i=0; i<NRA; i++)
+		  {
+			  for (j=0; j<NCB; j++)	  fprintf(log_file, "%6.2f    ", c[i][j]);
+
+			  fprintf(log_file, "\n");
+
+		  }
+
+	fprintf(log_file,"******************************************************\n");
+	fprintf (log_file, "Done.\n");
+
+	//writingTime(log_file);  // Inserting Time into the file at the End
+	fprintf(log_file,"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+	writingTime(log_file);// Write the end time to the file
+	fprintf(log_file,"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n\n\n");
+
+	fclose(log_file);// CLosing the log file as well
+
+	return(0);
+}
+
+/*void printResultToFile(bool consolePrint, bool filePrint, FILE fileName)
+	{
+	if (consolePrint == TRUE){
+				}
+	else {
+		printf ("Nothing to print \n\r");
+	}
+
+
+	if (filePrint == TRUE)
+		{
+
+		}
+	else {
+			fprintf (fileName, "Nothing to print \n\r");
+		}
+
+	}*/
+
+
+
+time_t currentTime(void)
+{
+	time_t curentTime;
+
+	/* Get the current time. */
+	curentTime = time (NULL);
+	return(curentTime);
+}
+
+int writingTime (FILE *fileName)
+{
+	  char buffer[SIZE];
+	  time_t curtime;
+	  struct tm *loctime;
+
+	  curtime = currentTime();
+
+	  /* Convert it to local time representation. */
+	  loctime = localtime (&curtime);
+
+	  /* Print out the date and time in the standard format. */
+	  fputs (asctime (loctime), stdout);// Writing it to the console
+
+	  fprintf(fileName,asctime (loctime)); // Writing it into the file
+
+	  /* Print it out in a nice format. */
+	  strftime (buffer, SIZE, "Today is %A, %B %d.\n", loctime);
+	  fputs (buffer, stdout);// Writing it to the console
+
+	  fprintf(fileName,"%s", buffer); // Writing it into the file
+	  strftime (buffer, SIZE, "The time is %I:%M %p.\n", loctime);
+
+	  fputs (buffer, stdout);// Writing it to the console
+	  fprintf(fileName,"%s", buffer); // Writing it into the file
+
+	  return 0;
+}

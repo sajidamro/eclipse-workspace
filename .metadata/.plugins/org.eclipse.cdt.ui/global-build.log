@@ -1,0 +1,1001 @@
+16:53:06 **** Clean-only build of configuration Debug for project OpenMP_Projects ****
+rm -rf firstOpenMP.d OpenMP_Projects.exe firstOpenMP.o 
+16:53:10 **** Rebuild of configuration Debug for project OpenMP_Projects ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o firstOpenMP.o "..\\firstOpenMP.c" 
+..\firstOpenMP.c: In function 'main':
+..\firstOpenMP.c:6:22: warning: unused variable 'i' [-Wunused-variable]
+   int nthreads, tid, i;
+                      ^
+gcc -Xlinker -lgomp -o OpenMP_Projects.exe firstOpenMP.o -lpthread "-lgomp " 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot find -lgomp 
+collect2.exe: error: ld returned 1 exit status
+16:59:41 **** Incremental Build of configuration Debug for project OpenMP_Projects ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o firstOpenMP.o "..\\firstOpenMP.c" 
+gcc -Xlinker -lgomp -o OpenMP_Projects.exe firstOpenMP.o -lpthread "-lgomp " 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot find -lgomp 
+collect2.exe: error: ld returned 1 exit status
+17:01:26 **** Incremental Build of configuration Debug for project OpenMP_Projects ****
+Info: Internal Builder is used for build
+gcc -Xlinker gomp -o OpenMP_Projects.exe firstOpenMP.o -lgomp -lpthread 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot find gomp: No such file or directory
+collect2.exe: error: ld returned 1 exit status
+17:01:56 **** Incremental Build of configuration Debug for project OpenMP_Projects ****
+Info: Internal Builder is used for build
+gcc -o OpenMP_Projects.exe firstOpenMP.o -lgomp -lpthread 
+17:02:51 **** Incremental Build of configuration Debug for project OpenMP_Projects ****
+Info: Internal Builder is used for build
+gcc -o OpenMP_Projects.exe firstOpenMP.o -lgomp -lpthread 
+17:33:08 **** Incremental Build of configuration Debug for project OpenMP_Projects ****
+Info: Internal Builder is used for build
+gcc -o OpenMP_Projects.exe firstOpenMP.o -lgomp -lpthread 
+17:35:07 **** Rebuild of configuration Debug for project Second_OPENMP ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:45:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,chunk) private(i)
+ 
+..\main.c:48:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+ #pragma omp for schedule(dynamic,chunk)
+ 
+..\main.c:30:15: warning: variable 'b' set but not used [-Wunused-but-set-variable]
+   float a[N], b[N];
+               ^
+..\main.c:29:16: warning: unused variable 'tid' [-Wunused-variable]
+   int i, chunk,tid;
+                ^~~
+..\main.c:29:10: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+   int i, chunk,tid;
+          ^~~~~
+gcc -o Second_OPENMP.exe main.o 
+main.o: In function `main':
+C:\Users\Sajid\eclipse-workspace\Second_OPENMP\Debug/../main.c:37: undefined reference to `omp_get_num_procs'
+C:\Users\Sajid\eclipse-workspace\Second_OPENMP\Debug/../main.c:43: undefined reference to `omp_get_num_procs'
+C:\Users\Sajid\eclipse-workspace\Second_OPENMP\Debug/../main.c:43: undefined reference to `omp_set_num_threads'
+collect2.exe: error: ld returned 1 exit status
+17:36:08 **** Incremental Build of configuration Debug for project Second_OPENMP ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:30:15: warning: variable 'b' set but not used [-Wunused-but-set-variable]
+   float a[N], b[N];
+               ^
+..\main.c:29:16: warning: unused variable 'tid' [-Wunused-variable]
+   int i, chunk,tid;
+                ^~~
+gcc -o Second_OPENMP.exe main.o -lgomp -lpthread 
+17:53:59 **** Rebuild of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:35:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:45:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:49:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:53:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:61:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:27:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o 
+MatrixMultiplication.o: In function `main':
+C:\Users\Sajid\eclipse-workspace\omp_mm\Debug/../MatrixMultiplication.c:37: undefined reference to `omp_get_thread_num'
+C:\Users\Sajid\eclipse-workspace\omp_mm\Debug/../MatrixMultiplication.c:40: undefined reference to `omp_get_num_threads'
+collect2.exe: error: ld returned 1 exit status
+17:55:14 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:35:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:45:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:49:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:53:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:61:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:27:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+17:58:51 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:35:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:45:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:49:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:53:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:61:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:27:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+19:08:44 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:35:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:47:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:51:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:55:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:27:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+19:10:04 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:35:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:47:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:51:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:55:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:27:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+19:15:05 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:35:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:47:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:51:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:55:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:64:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:27:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+20:17:13 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:39:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:51:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:55:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:59:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:68:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:25:36 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:76:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:93:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:97:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:101:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:111:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:57:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:38:52 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'writingTime':
+..\MatrixMultiplication.c:52:23: warning: format '%c' expects argument of type 'int', but argument 3 has type 'char *' [-Wformat=]
+    fprintf(fileName,"%c", buffer); // Writing it into the file
+                       ^
+..\MatrixMultiplication.c:56:23: warning: format '%c' expects argument of type 'int', but argument 3 has type 'char *' [-Wformat=]
+    fprintf(fileName,"%c", buffer); // Writing it into the file
+                       ^
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:75:26: error: too few arguments to function 'writingTime'
+ fprintf (log_file, "%c", writingTime()); // Inserting Time into the file at the begining
+                          ^~~~~~~~~~~
+..\MatrixMultiplication.c:31:5: note: declared here
+ int writingTime (FILE *fileName)
+     ^~~~~~~~~~~
+..\MatrixMultiplication.c:82:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:99:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:103:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:107:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:117:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:152:26: error: too few arguments to function 'writingTime'
+ fprintf (log_file, "%c", writingTime()); // Inserting Time into the file at the End
+                          ^~~~~~~~~~~
+..\MatrixMultiplication.c:31:5: note: declared here
+ int writingTime (FILE *fileName)
+     ^~~~~~~~~~~
+..\MatrixMultiplication.c:63:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+08:42:50 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:54:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:75:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:89:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:33:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+..\MatrixMultiplication.c: In function 'writingTime':
+..\MatrixMultiplication.c:155:23: warning: format '%c' expects argument of type 'int', but argument 3 has type 'char *' [-Wformat=]
+    fprintf(fileName,"%c", buffer); // Writing it into the file
+                       ^
+..\MatrixMultiplication.c:159:23: warning: format '%c' expects argument of type 'int', but argument 3 has type 'char *' [-Wformat=]
+    fprintf(fileName,"%c", buffer); // Writing it into the file
+                       ^
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:45:07 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:54:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:75:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:89:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:33:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:46:06 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:54:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:75:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:89:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:33:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:49:34 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:54:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:75:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:89:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:33:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:52:30 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:54:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:75:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:89:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:116:11: warning: passing argument 1 of 'fprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+   fprintf("\n");
+           ^~~~
+In file included from ..\MatrixMultiplication.c:18:0:
+c:\mingw\include\stdio.h:453:38: note: expected 'FILE * {aka struct _iobuf *}' but argument is of type 'char *'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int fprintf (FILE *, const char *, ...);
+                                      ^~~~~~~
+..\MatrixMultiplication.c:116:3: error: too few arguments to function 'fprintf'
+   fprintf("\n");
+   ^~~~~~~
+In file included from ..\MatrixMultiplication.c:18:0:
+c:\mingw\include\stdio.h:453:38: note: declared here
+ _CRTIMP __cdecl __MINGW_NOTHROW  int fprintf (FILE *, const char *, ...);
+                                      ^~~~~~~
+..\MatrixMultiplication.c:33:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+08:52:51 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:54:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:75:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:89:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:33:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:53:26 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:54:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:75:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:89:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:33:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+10:26:08 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:55:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:73:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:85:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:97:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:38:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+10:29:23 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:55:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:73:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:85:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:97:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:38:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+10:31:14 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:55:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:73:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:85:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:97:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:38:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+07:22:32 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:50:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:67:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:73:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:91:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+07:23:15 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:50:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:67:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:73:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:91:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+07:26:06 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:50:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:69:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:75:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:81:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:93:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+07:30:48 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:50:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:56:2: warning: implicit declaration of function 'omp_set_thread_num' [-Wimplicit-function-declaration]
+  omp_set_thread_num(numberThreads); // Setting number of Threads
+  ^~~~~~~~~~~~~~~~~~
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:77:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:83:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:95:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+MatrixMultiplication.o: In function `main':
+C:\Users\Sajid\eclipse-workspace\omp_mm\Debug/../MatrixMultiplication.c:56: undefined reference to `omp_set_thread_num'
+collect2.exe: error: ld returned 1 exit status
+07:31:35 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:50:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:77:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:83:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:95:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+07:36:39 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:50:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:58:2: error: invalid use of void expression
+  printf("Number of Threads set to  %d\n\r",omp_set_num_threads(4));
+  ^~~~~~
+..\MatrixMultiplication.c:73:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:79:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:85:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:97:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+08:07:57 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:50:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:77:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:83:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:95:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:09:46 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:52:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:71:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:77:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:83:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:95:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:13:43 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:82:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:88:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:94:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:106:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:151:34: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+  fprintf (log_file, "Time Taken %d \n ",timeTaken);
+                                  ^
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:14:21 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:82:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:88:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:94:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:106:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:151:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+  printf ("Time Taken %d \n ",timeTaken);
+                       ^
+..\MatrixMultiplication.c:152:34: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+  fprintf (log_file, "Time Taken %d \n ",timeTaken);
+                                  ^
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:15:28 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:82:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:88:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:94:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:106:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:16:06 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:82:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:88:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:94:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:106:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:17:54 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:82:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:88:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:94:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:106:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:18:06 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:82:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:88:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:94:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:106:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:18:30 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:82:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:88:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:94:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:106:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:19:03 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:63:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:82:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:88:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:94:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:106:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:31:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:22:10 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:64:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:83:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:89:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:95:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:107:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:32:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:23:27 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:65:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:84:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:90:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:96:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:108:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:33:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 
+08:24:11 **** Incremental Build of configuration Debug for project omp_mm ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -pthread -lopenmp -c -fmessage-length=0 -o MatrixMultiplication.o "..\\MatrixMultiplication.c" 
+..\MatrixMultiplication.c: In function 'main':
+..\MatrixMultiplication.c:66:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel shared(a,b,c,nthreads,chunk) private(tid,i,j,k)
+ 
+..\MatrixMultiplication.c:85:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:91:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:97:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:109:0: warning: ignoring #pragma omp for [-Wunknown-pragmas]
+   #pragma omp for schedule (static, chunk)
+ 
+..\MatrixMultiplication.c:34:29: warning: variable 'chunk' set but not used [-Wunused-but-set-variable]
+ int tid, nthreads, i, j, k, chunk;
+                             ^~~~~
+gcc -o omp_mm.exe MatrixMultiplication.o -lpthread -lgomp 

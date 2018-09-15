@@ -1,0 +1,6 @@
+17:33:08 **** Incremental Build of configuration Debug for project OpenMP_Projects ****
+Info: Internal Builder is used for build
+gcc -o OpenMP_Projects.exe firstOpenMP.o -lgomp -lpthread 
+
+17:33:08 Build Finished. 0 errors, 0 warnings. (took 623ms)
+
