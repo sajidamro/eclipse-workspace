@@ -402,3 +402,252 @@ g++ -o Lab_1.exe matrix_Multi.o -lgomp
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
 g++ -o Lab_1.exe matrix_Multi.o -lgomp 
+18:57:51 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:48:30: error: 'initializeMatrix' was not declared in this scope
+   initializeMatrix(sizeMatrix);
+                              ^
+..\matrix_Multi.cpp:56:33: error: 'multiplyMatrixSize' was not declared in this scope
+    multiplyMatrixSize(sizeMatrix);
+                                 ^
+..\matrix_Multi.cpp:73:42: error: 'multiplyParallelSize' was not declared in this scope
+      multiplyParallelSize( m , sizeMatrix);
+                                          ^
+18:58:24 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+g++ -o Lab_1.exe matrix_Multi.o -lgomp 
+19:51:59 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:178:29: error: 'CLOCK_MONOTONIC' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                             ^~~~~~~~~~~~~~~
+..\matrix_Multi.cpp:178:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                                                 ^
+..\matrix_Multi.cpp:179:33: warning: format '%i' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+  printf("Time is: %i",resultTime);
+                                 ^
+19:52:28 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:178:29: error: 'CLOCK_MONOTONIC' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                             ^~~~~~~~~~~~~~~
+..\matrix_Multi.cpp:178:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                                                 ^
+19:53:45 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:177:29: error: 'CLOCK_MONOTONIC' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                             ^~~~~~~~~~~~~~~
+..\matrix_Multi.cpp:177:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                                                 ^
+19:54:06 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp:9:16: fatal error: time: No such file or directory
+ #include "time"
+                ^
+compilation terminated.
+19:54:23 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:178:29: error: 'CLOCK_MONOTONIC' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                             ^~~~~~~~~~~~~~~
+..\matrix_Multi.cpp:178:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                                                 ^
+19:58:39 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp:18:0: warning: "_POSIX_C_SOURCE" redefined
+ #define _POSIX_C_SOURCE 199309L
+ 
+In file included from c:\mingw\include\wchar.h:53:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwchar:44,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\postypes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iosfwd:40,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from ..\matrix_Multi.cpp:8:
+c:\mingw\include\_mingw.h:462:0: note: this is the location of the previous definition
+ #  define _POSIX_C_SOURCE  200809L
+ 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:181:29: error: 'CLOCK_MONOTONIC' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                             ^~~~~~~~~~~~~~~
+..\matrix_Multi.cpp:181:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                                                 ^
+19:59:17 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:180:29: error: 'CLOCK_MONOTONIC' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                             ^~~~~~~~~~~~~~~
+..\matrix_Multi.cpp:180:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_MONOTONIC, &tp);
+                                                 ^
+20:00:11 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:180:30: error: 'CLOCK_PROCESS_CPUTIME_ID' was not declared in this scope
+  resultTime = clock_gettime( CLOCK_PROCESS_CPUTIME_ID, &tp);
+                              ^~~~~~~~~~~~~~~~~~~~~~~~
+..\matrix_Multi.cpp:180:59: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime( CLOCK_PROCESS_CPUTIME_ID, &tp);
+                                                           ^
+20:05:36 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:179:30: error: 'CLOCK_PROCESS_CPUTIME_ID' was not declared in this scope
+  resultTime = clock_gettime( CLOCK_PROCESS_CPUTIME_ID, &tp);
+                              ^~~~~~~~~~~~~~~~~~~~~~~~
+..\matrix_Multi.cpp:179:59: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime( CLOCK_PROCESS_CPUTIME_ID, &tp);
+                                                           ^
+20:07:10 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:179:36: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime( 1, &tp);
+                                    ^
+20:12:16 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:179:36: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime( 1, &tp);
+                                    ^
+20:12:39 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:179:29: error: 'CLOCK_REALTIME' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_REALTIME , &tp);
+                             ^~~~~~~~~~~~~~
+..\matrix_Multi.cpp:179:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_REALTIME , &tp);
+                                                 ^
+20:13:21 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:181:29: error: 'CLOCK_REALTIME' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_REALTIME , &tp);
+                             ^~~~~~~~~~~~~~
+..\matrix_Multi.cpp:181:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_REALTIME , &tp);
+                                                 ^
+20:19:00 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -lrt -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:182:29: error: 'CLOCK_REALTIME' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_REALTIME , &tp);
+                             ^~~~~~~~~~~~~~
+..\matrix_Multi.cpp:182:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_REALTIME , &tp);
+                                                 ^
+20:21:25 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -lrt -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:182:29: error: 'CLOCK_REALTIME' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_REALTIME , &tp);
+                             ^~~~~~~~~~~~~~
+..\matrix_Multi.cpp:182:49: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(CLOCK_REALTIME , &tp);
+                                                 ^
+20:22:05 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -lrt -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:182:36: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(0 , &tp);
+                                    ^
+20:23:33 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -lrt -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:183:36: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(0, &tpp);
+                                    ^
+20:23:44 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -lrt -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:183:37: error: 'clock__gettime' was not declared in this scope
+  resultTime = clock__gettime(0, &tpp);
+                                     ^
+20:23:54 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -lrt -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:183:36: error: 'clock_gettime' was not declared in this scope
+  resultTime = clock_gettime(0, &tpp);
+                                    ^
+20:30:15 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -lrt -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:174:6: warning: unused variable 'resultTime' [-Wunused-variable]
+  int resultTime=0;
+      ^~~~~~~~~~
+g++ -o Lab_1.exe matrix_Multi.o -lgomp -lrt 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot find -lrt
+collect2.exe: error: ld returned 1 exit status
+20:31:17 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:174:6: warning: unused variable 'resultTime' [-Wunused-variable]
+  int resultTime=0;
+      ^~~~~~~~~~
+g++ -o Lab_1.exe matrix_Multi.o -lgomp 
+20:38:30 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:174:9: warning: unused variable 'timeTaken' [-Wunused-variable]
+  double timeTaken;
+         ^~~~~~~~~
+..\matrix_Multi.cpp:175:9: warning: unused variable 'startTime' [-Wunused-variable]
+  time_t startTime, endTime;
+         ^~~~~~~~~
+..\matrix_Multi.cpp:175:20: warning: unused variable 'endTime' [-Wunused-variable]
+  time_t startTime, endTime;
+                    ^~~~~~~
+g++ -o Lab_1.exe matrix_Multi.o -lgomp 
+20:50:46 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+..\matrix_Multi.cpp: In function 'int main(int, _TCHAR**)':
+..\matrix_Multi.cpp:221:2: error: expected primary-expression before '/' token
+ */
+  ^
+..\matrix_Multi.cpp:222:2: error: expected primary-expression before '}' token
+  }
+  ^
+20:51:22 **** Incremental Build of configuration Debug for project Lab_1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -pthread -fopenmp -c -fmessage-length=0 -o matrix_Multi.o "..\\matrix_Multi.cpp" 
+g++ -o Lab_1.exe matrix_Multi.o -lgomp 

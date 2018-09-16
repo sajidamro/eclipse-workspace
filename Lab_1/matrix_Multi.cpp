@@ -1,24 +1,29 @@
 
 /* *Lab1: Multiply two matrices using OpenMP
  * *Student Name: Sajid Mahmood
- * *Course Name: EE8128 Parallel Computing
+ * *Course Name: EE8218 Parallel Computing
  * *Instructor Name: Dr. Nagi Mekhiel
 */
 
+//#define _POSIX_C_SOURCE 199309L
+
 #include "iostream"
+#include <stdlib.h>
 #include <omp.h>
 #include <ctime>
-#include "tchar.h"
+#include <tchar.h>
 #include <math.h>
+#include <chrono>
+
 
 using namespace std;
+
 /*
 *Instance Variables of Matrix1, Matrix2
 *Instance and Resultant Matrix
 *Instance *Also, the length of the square matrix
 */
 const int sizeOfMatrix = 2048;
-//const int sizeOfMatrix = 2;
 const int numberOfThreads = 8;
 const char debug = 0 ;
 int sizeMatrix=0;
@@ -164,16 +169,16 @@ void multiplyParallelSize(char numberThreads, int size)
 
 /* *Main of the program which is executed on RUNTIME */
 
-int main(int argc, _TCHAR* argv[]){
-
-	double timeTaken;
-	time_t startTime, endTime;
+int main(int argc, _TCHAR* argv[])
+{
 
 	//Commands for initialization of Matrices
 
 	FILE *log_file;
-		/*** Start Logging into file***/
+		/** Start Logging into file**/
 		log_file = fopen ("Matrix_Multi.log","a+");
+
+		//clock_gettime();
 
 for(int x=1; x <= 11 ;x++)
 	{
@@ -187,14 +192,15 @@ for(int x=1; x <= 11 ;x++)
 			cout << "\n\nMuliplying Two matrices without Parallelism or OpenMP" << endl;
 			fprintf(log_file,"\n\tMuliplying Two matrices without Parallelism or OpenMP \n\r");
 
-			startTime = time(0);
+			auto start = std::chrono::system_clock::now();
 			multiplyMatrixSize(sizeMatrix);
-			endTime = time(0);
+			auto end = std::chrono::system_clock::now();
 
-			timeTaken = difftime(endTime, startTime)*1000;
-			cout << "\n\tThe Multiplication took TIME in milliseconds: " << timeTaken;
+			std::chrono::duration <double> elapsed_seconds = end-start;
 
-			fprintf(log_file,"\n\tThe Multiplication took TIME in milliseconds: %f \n\r", timeTaken);
+			std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+
+			fprintf(log_file,"\n\tThe Multiplication took TIME in milliseconds: %f \n\r", elapsed_seconds.count());
 
 		//Commands for Multiplying matrices with Parallelism and time the algorithm
 			cout << "\n\nMuliplying Same Matrices with Parallelism using OpenMP" << endl;
@@ -203,18 +209,16 @@ for(int x=1; x <= 11 ;x++)
 				//multiplyParallel(maxNumThreads);
 			for(int m=2; m <= numberOfThreads; m++)
 				{
-					startTime = time(0);
-					//multiplyParallel(numberOfThreads);
+					auto start = std::chrono::system_clock::now();
 					multiplyParallelSize( m , sizeMatrix);
-					endTime = time(0);
+					auto end = std::chrono::system_clock::now();
 
-					timeTaken = difftime(endTime, startTime) * 1000;
-					cout << "\n\tThe Multiplication took TIME in milliseconds: " << timeTaken ;
-					cout << "\t by using Thread Number: " << m << endl;
+					std::chrono::duration <double> elapsed_seconds = end-start;
 
-					fprintf(log_file,"\n\tThe Multiplication took TIME in milliseconds: %f by using Thread numbers: %i\n\r", timeTaken,m);
+					std::cout << "elapsed time: " << elapsed_seconds.count() << "s" << "\t by using Thread Number: " << m << endl;
+
+					fprintf(log_file,"\n\tThe Multiplication took TIME in milliseconds: %f by using Thread numbers: %i\n\r", elapsed_seconds.count(),m);
 				}
-
 	}
 		printf("Iteration completed");
 		fclose(log_file);// Closing the log file as well

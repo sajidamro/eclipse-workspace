@@ -372,4 +372,268 @@ Size of the Matrix = 2 x 2
 	The Multiplication took TIME in milliseconds: 85000.000000 by using Thread numbers: 7
 
 	The Multiplication took TIME in milliseconds: 85000.000000 by using Thread numbers: 8
+Size of the Matrix = 2 x 2 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 4 x 4 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 8 x 8 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 16 x 16 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 32 x 32 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 64 x 64 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 128 x 128 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 256 x 256 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 512 x 512 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 1024 x 1024 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 2048 x 2048 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+Size of the Matrix = 2 x 2 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000000 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 0.001000 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 0.000998 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 8
+Size of the Matrix = 4 x 4 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000000 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 0.001000 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 0.000999 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 8
+Size of the Matrix = 8 x 8 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000000 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 0.000998 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 0.001001 by using Thread numbers: 8
+Size of the Matrix = 16 x 16 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000000 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 0.001001 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 0.000998 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 0.000998 by using Thread numbers: 8
+Size of the Matrix = 32 x 32 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000000 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.000999 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 0.001000 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 0.001000 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 0.000000 by using Thread numbers: 8
+Size of the Matrix = 64 x 64 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.001998 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.002000 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 0.001999 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 0.002000 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 0.001997 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 0.002000 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 0.001998 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 0.001999 by using Thread numbers: 8
+Size of the Matrix = 128 x 128 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.021985 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.033979 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 0.035978 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 0.024985 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 0.032979 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 0.028982 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 0.034978 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 0.012992 by using Thread numbers: 8
+Size of the Matrix = 256 x 256 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.157905 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 0.088946 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 0.090942 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 0.106935 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 0.106935 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 0.105937 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 0.105932 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 0.103938 by using Thread numbers: 8
+Size of the Matrix = 512 x 512 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 1.968795 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 1.047360 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 0.954923 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 0.864474 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 0.874464 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 0.870467 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 0.881460 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 0.871467 by using Thread numbers: 8
+Size of the Matrix = 1024 x 1024 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 21.783664 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 11.612887 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 9.947909 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 9.497180 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 8.980501 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 9.415234 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 9.452690 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 9.205362 by using Thread numbers: 8
+Size of the Matrix = 2048 x 2048 
+
+	Muliplying Two matrices without Parallelism or OpenMP 
+
+	The Multiplication took TIME in milliseconds: 188.637484 
+
+	Muliplying Same Matrices with Parallelism using OpenMP 
+
+	The Multiplication took TIME in milliseconds: 101.033236 by using Thread numbers: 2
+
+	The Multiplication took TIME in milliseconds: 90.742460 by using Thread numbers: 3
+
+	The Multiplication took TIME in milliseconds: 84.779584 by using Thread numbers: 4
+
+	The Multiplication took TIME in milliseconds: 85.274779 by using Thread numbers: 5
+
+	The Multiplication took TIME in milliseconds: 83.680756 by using Thread numbers: 6
+
+	The Multiplication took TIME in milliseconds: 89.610122 by using Thread numbers: 7
+
+	The Multiplication took TIME in milliseconds: 86.155239 by using Thread numbers: 8
 
